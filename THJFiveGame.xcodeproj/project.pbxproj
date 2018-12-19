@@ -1,0 +1,736 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55BF8DDDAF6B0C721AAC8260 /* libPods-THJFiveGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A02E65698DB1ACC981BEF2 /* libPods-THJFiveGame.a */; };
+		A725B19C21C8C1C600856BA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B19B21C8C1C600856BA8 /* AppDelegate.m */; };
+		A725B19F21C8C1C600856BA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B19E21C8C1C600856BA8 /* ViewController.m */; };
+		A725B1A421C8C1C800856BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A725B1A321C8C1C800856BA8 /* Assets.xcassets */; };
+		A725B1A721C8C1C800856BA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A725B1A521C8C1C800856BA8 /* LaunchScreen.storyboard */; };
+		A725B1AA21C8C1C800856BA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1A921C8C1C800856BA8 /* main.m */; };
+		A725B1B421C8C1C800856BA8 /* THJFiveGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1B321C8C1C800856BA8 /* THJFiveGameTests.m */; };
+		A725B1BF21C8C1C800856BA8 /* THJFiveGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1BE21C8C1C800856BA8 /* THJFiveGameUITests.m */; };
+		A725B1D321C8C29C00856BA8 /* CheckerboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1CE21C8C29C00856BA8 /* CheckerboardView.m */; };
+		A725B1D821C8C37200856BA8 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1D621C8C37200856BA8 /* UIView+Frame.m */; };
+		A725B1DB21C8C39200856BA8 /* THJAFNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1DA21C8C39200856BA8 /* THJAFNRequest.m */; };
+		A725B21421C8E9D600856BA8 /* THJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B21321C8E9D600856BA8 /* THJWebViewController.m */; };
+		A725B21721C8F2BA00856BA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A725B21521C8F2BA00856BA8 /* Main.storyboard */; };
+		A725B21A21C8F89300856BA8 /* THJGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B21921C8F89300856BA8 /* THJGameViewController.m */; };
+		A7AEDA6121C9E95D0076600E /* HJNetFailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AEDA6021C9E95D0076600E /* HJNetFailView.m */; };
+		A7AEDA6721CA14730076600E /* THJLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AEDA6621CA14730076600E /* THJLoadingView.m */; };
+		A7AEDA6A21CA190C0076600E /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AEDA6821CA190B0076600E /* UIView+Utils.m */; };
+		A7AEDA6D21CA1B890076600E /* animationLoadingRenewal.gif in Resources */ = {isa = PBXBuildFile; fileRef = A7AEDA6C21CA1B890076600E /* animationLoadingRenewal.gif */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A725B1B021C8C1C800856BA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A725B18F21C8C1C600856BA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A725B19621C8C1C600856BA8;
+			remoteInfo = THJFiveGame;
+		};
+		A725B1BB21C8C1C800856BA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A725B18F21C8C1C600856BA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A725B19621C8C1C600856BA8;
+			remoteInfo = THJFiveGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FAAB839F1B94F80180184C8 /* Pods-THJFiveGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THJFiveGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-THJFiveGame/Pods-THJFiveGame.release.xcconfig"; sourceTree = "<group>"; };
+		43A02E65698DB1ACC981BEF2 /* libPods-THJFiveGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-THJFiveGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A725B19721C8C1C600856BA8 /* THJFiveGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THJFiveGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A725B19A21C8C1C600856BA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A725B19B21C8C1C600856BA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A725B19D21C8C1C600856BA8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A725B19E21C8C1C600856BA8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A725B1A321C8C1C800856BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A725B1A621C8C1C800856BA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A725B1A821C8C1C800856BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A725B1A921C8C1C800856BA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A725B1AF21C8C1C800856BA8 /* THJFiveGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THJFiveGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A725B1B321C8C1C800856BA8 /* THJFiveGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJFiveGameTests.m; sourceTree = "<group>"; };
+		A725B1B521C8C1C800856BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A725B1BA21C8C1C800856BA8 /* THJFiveGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THJFiveGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A725B1BE21C8C1C800856BA8 /* THJFiveGameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJFiveGameUITests.m; sourceTree = "<group>"; };
+		A725B1C021C8C1C800856BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A725B1CE21C8C29C00856BA8 /* CheckerboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckerboardView.m; sourceTree = "<group>"; };
+		A725B1CF21C8C29C00856BA8 /* CheckerboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckerboardView.h; sourceTree = "<group>"; };
+		A725B1D621C8C37200856BA8 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		A725B1D721C8C37200856BA8 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		A725B1D921C8C39200856BA8 /* THJAFNRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJAFNRequest.h; sourceTree = "<group>"; };
+		A725B1DA21C8C39200856BA8 /* THJAFNRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJAFNRequest.m; sourceTree = "<group>"; };
+		A725B21221C8E9D600856BA8 /* THJWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJWebViewController.h; sourceTree = "<group>"; };
+		A725B21321C8E9D600856BA8 /* THJWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJWebViewController.m; sourceTree = "<group>"; };
+		A725B21621C8F2BA00856BA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A725B21821C8F89300856BA8 /* THJGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJGameViewController.h; sourceTree = "<group>"; };
+		A725B21921C8F89300856BA8 /* THJGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJGameViewController.m; sourceTree = "<group>"; };
+		A7AEDA5F21C9E95D0076600E /* HJNetFailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNetFailView.h; sourceTree = "<group>"; };
+		A7AEDA6021C9E95D0076600E /* HJNetFailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNetFailView.m; sourceTree = "<group>"; };
+		A7AEDA6321C9F1AF0076600E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A7AEDA6421C9F1C50076600E /* THJGameHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJGameHeader.h; sourceTree = "<group>"; };
+		A7AEDA6521CA14730076600E /* THJLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJLoadingView.h; sourceTree = "<group>"; };
+		A7AEDA6621CA14730076600E /* THJLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJLoadingView.m; sourceTree = "<group>"; };
+		A7AEDA6821CA190B0076600E /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		A7AEDA6921CA190C0076600E /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		A7AEDA6C21CA1B890076600E /* animationLoadingRenewal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animationLoadingRenewal.gif; sourceTree = "<group>"; };
+		BEA47336C7757DA759A4AF2B /* Pods-THJFiveGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THJFiveGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THJFiveGame/Pods-THJFiveGame.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A725B19421C8C1C600856BA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55BF8DDDAF6B0C721AAC8260 /* libPods-THJFiveGame.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A725B1AC21C8C1C800856BA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A725B1B721C8C1C800856BA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14F2DAA962E4A3ED855F6C6D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEA47336C7757DA759A4AF2B /* Pods-THJFiveGame.debug.xcconfig */,
+				2FAAB839F1B94F80180184C8 /* Pods-THJFiveGame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6B731822E206C4C349000EE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43A02E65698DB1ACC981BEF2 /* libPods-THJFiveGame.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A725B18E21C8C1C600856BA8 = {
+			isa = PBXGroup;
+			children = (
+				A725B19921C8C1C600856BA8 /* THJFiveGame */,
+				A725B1B221C8C1C800856BA8 /* THJFiveGameTests */,
+				A725B1BD21C8C1C800856BA8 /* THJFiveGameUITests */,
+				A725B19821C8C1C600856BA8 /* Products */,
+				14F2DAA962E4A3ED855F6C6D /* Pods */,
+				6B731822E206C4C349000EE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A725B19821C8C1C600856BA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A725B19721C8C1C600856BA8 /* THJFiveGame.app */,
+				A725B1AF21C8C1C800856BA8 /* THJFiveGameTests.xctest */,
+				A725B1BA21C8C1C800856BA8 /* THJFiveGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A725B19921C8C1C600856BA8 /* THJFiveGame */ = {
+			isa = PBXGroup;
+			children = (
+				A7AEDA6B21CA1B600076600E /* source */,
+				A7AEDA5E21C9E95D0076600E /* helpView */,
+				A725B21521C8F2BA00856BA8 /* Main.storyboard */,
+				A725B1D521C8C37200856BA8 /* tool */,
+				A725B1CC21C8C29C00856BA8 /* Checkerboard */,
+				A725B19A21C8C1C600856BA8 /* AppDelegate.h */,
+				A725B19B21C8C1C600856BA8 /* AppDelegate.m */,
+				A725B19D21C8C1C600856BA8 /* ViewController.h */,
+				A725B19E21C8C1C600856BA8 /* ViewController.m */,
+				A725B21221C8E9D600856BA8 /* THJWebViewController.h */,
+				A725B21321C8E9D600856BA8 /* THJWebViewController.m */,
+				A725B21821C8F89300856BA8 /* THJGameViewController.h */,
+				A725B21921C8F89300856BA8 /* THJGameViewController.m */,
+				A7AEDA6321C9F1AF0076600E /* PrefixHeader.pch */,
+				A7AEDA6421C9F1C50076600E /* THJGameHeader.h */,
+				A725B1A321C8C1C800856BA8 /* Assets.xcassets */,
+				A725B1A521C8C1C800856BA8 /* LaunchScreen.storyboard */,
+				A725B1A821C8C1C800856BA8 /* Info.plist */,
+				A725B1A921C8C1C800856BA8 /* main.m */,
+			);
+			path = THJFiveGame;
+			sourceTree = "<group>";
+		};
+		A725B1B221C8C1C800856BA8 /* THJFiveGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				A725B1B321C8C1C800856BA8 /* THJFiveGameTests.m */,
+				A725B1B521C8C1C800856BA8 /* Info.plist */,
+			);
+			path = THJFiveGameTests;
+			sourceTree = "<group>";
+		};
+		A725B1BD21C8C1C800856BA8 /* THJFiveGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A725B1BE21C8C1C800856BA8 /* THJFiveGameUITests.m */,
+				A725B1C021C8C1C800856BA8 /* Info.plist */,
+			);
+			path = THJFiveGameUITests;
+			sourceTree = "<group>";
+		};
+		A725B1CC21C8C29C00856BA8 /* Checkerboard */ = {
+			isa = PBXGroup;
+			children = (
+				A725B1CD21C8C29C00856BA8 /* Checkerboard */,
+			);
+			path = Checkerboard;
+			sourceTree = "<group>";
+		};
+		A725B1CD21C8C29C00856BA8 /* Checkerboard */ = {
+			isa = PBXGroup;
+			children = (
+				A725B1CE21C8C29C00856BA8 /* CheckerboardView.m */,
+				A725B1CF21C8C29C00856BA8 /* CheckerboardView.h */,
+			);
+			path = Checkerboard;
+			sourceTree = "<group>";
+		};
+		A725B1D521C8C37200856BA8 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				A725B1D621C8C37200856BA8 /* UIView+Frame.m */,
+				A725B1D721C8C37200856BA8 /* UIView+Frame.h */,
+				A725B1D921C8C39200856BA8 /* THJAFNRequest.h */,
+				A725B1DA21C8C39200856BA8 /* THJAFNRequest.m */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		A7AEDA5E21C9E95D0076600E /* helpView */ = {
+			isa = PBXGroup;
+			children = (
+				A7AEDA5F21C9E95D0076600E /* HJNetFailView.h */,
+				A7AEDA6021C9E95D0076600E /* HJNetFailView.m */,
+				A7AEDA6521CA14730076600E /* THJLoadingView.h */,
+				A7AEDA6921CA190C0076600E /* UIView+Utils.h */,
+				A7AEDA6821CA190B0076600E /* UIView+Utils.m */,
+				A7AEDA6621CA14730076600E /* THJLoadingView.m */,
+			);
+			path = helpView;
+			sourceTree = "<group>";
+		};
+		A7AEDA6B21CA1B600076600E /* source */ = {
+			isa = PBXGroup;
+			children = (
+				A7AEDA6C21CA1B890076600E /* animationLoadingRenewal.gif */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A725B19621C8C1C600856BA8 /* THJFiveGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A725B1C321C8C1C800856BA8 /* Build configuration list for PBXNativeTarget "THJFiveGame" */;
+			buildPhases = (
+				CAE2CC3EEA19C3097D9D1189 /* [CP] Check Pods Manifest.lock */,
+				A725B19321C8C1C600856BA8 /* Sources */,
+				A725B19421C8C1C600856BA8 /* Frameworks */,
+				A725B19521C8C1C600856BA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = THJFiveGame;
+			productName = THJFiveGame;
+			productReference = A725B19721C8C1C600856BA8 /* THJFiveGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A725B1AE21C8C1C800856BA8 /* THJFiveGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A725B1C621C8C1C800856BA8 /* Build configuration list for PBXNativeTarget "THJFiveGameTests" */;
+			buildPhases = (
+				A725B1AB21C8C1C800856BA8 /* Sources */,
+				A725B1AC21C8C1C800856BA8 /* Frameworks */,
+				A725B1AD21C8C1C800856BA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A725B1B121C8C1C800856BA8 /* PBXTargetDependency */,
+			);
+			name = THJFiveGameTests;
+			productName = THJFiveGameTests;
+			productReference = A725B1AF21C8C1C800856BA8 /* THJFiveGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A725B1B921C8C1C800856BA8 /* THJFiveGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A725B1C921C8C1C800856BA8 /* Build configuration list for PBXNativeTarget "THJFiveGameUITests" */;
+			buildPhases = (
+				A725B1B621C8C1C800856BA8 /* Sources */,
+				A725B1B721C8C1C800856BA8 /* Frameworks */,
+				A725B1B821C8C1C800856BA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A725B1BC21C8C1C800856BA8 /* PBXTargetDependency */,
+			);
+			name = THJFiveGameUITests;
+			productName = THJFiveGameUITests;
+			productReference = A725B1BA21C8C1C800856BA8 /* THJFiveGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A725B18F21C8C1C600856BA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = tianXiaotian;
+				TargetAttributes = {
+					A725B19621C8C1C600856BA8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					A725B1AE21C8C1C800856BA8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = A725B19621C8C1C600856BA8;
+					};
+					A725B1B921C8C1C800856BA8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = A725B19621C8C1C600856BA8;
+					};
+				};
+			};
+			buildConfigurationList = A725B19221C8C1C600856BA8 /* Build configuration list for PBXProject "THJFiveGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A725B18E21C8C1C600856BA8;
+			productRefGroup = A725B19821C8C1C600856BA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A725B19621C8C1C600856BA8 /* THJFiveGame */,
+				A725B1AE21C8C1C800856BA8 /* THJFiveGameTests */,
+				A725B1B921C8C1C800856BA8 /* THJFiveGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A725B19521C8C1C600856BA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A725B21721C8F2BA00856BA8 /* Main.storyboard in Resources */,
+				A725B1A721C8C1C800856BA8 /* LaunchScreen.storyboard in Resources */,
+				A725B1A421C8C1C800856BA8 /* Assets.xcassets in Resources */,
+				A7AEDA6D21CA1B890076600E /* animationLoadingRenewal.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A725B1AD21C8C1C800856BA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A725B1B821C8C1C800856BA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CAE2CC3EEA19C3097D9D1189 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-THJFiveGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A725B19321C8C1C600856BA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A725B21421C8E9D600856BA8 /* THJWebViewController.m in Sources */,
+				A725B21A21C8F89300856BA8 /* THJGameViewController.m in Sources */,
+				A725B1DB21C8C39200856BA8 /* THJAFNRequest.m in Sources */,
+				A725B19F21C8C1C600856BA8 /* ViewController.m in Sources */,
+				A7AEDA6721CA14730076600E /* THJLoadingView.m in Sources */,
+				A7AEDA6A21CA190C0076600E /* UIView+Utils.m in Sources */,
+				A725B1D321C8C29C00856BA8 /* CheckerboardView.m in Sources */,
+				A725B1AA21C8C1C800856BA8 /* main.m in Sources */,
+				A7AEDA6121C9E95D0076600E /* HJNetFailView.m in Sources */,
+				A725B1D821C8C37200856BA8 /* UIView+Frame.m in Sources */,
+				A725B19C21C8C1C600856BA8 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A725B1AB21C8C1C800856BA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A725B1B421C8C1C800856BA8 /* THJFiveGameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A725B1B621C8C1C800856BA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A725B1BF21C8C1C800856BA8 /* THJFiveGameUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A725B1B121C8C1C800856BA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A725B19621C8C1C600856BA8 /* THJFiveGame */;
+			targetProxy = A725B1B021C8C1C800856BA8 /* PBXContainerItemProxy */;
+		};
+		A725B1BC21C8C1C800856BA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A725B19621C8C1C600856BA8 /* THJFiveGame */;
+			targetProxy = A725B1BB21C8C1C800856BA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A725B1A521C8C1C800856BA8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A725B1A621C8C1C800856BA8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A725B21521C8F2BA00856BA8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A725B21621C8F2BA00856BA8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A725B1C121C8C1C800856BA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A725B1C221C8C1C800856BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A725B1C421C8C1C800856BA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEA47336C7757DA759A4AF2B /* Pods-THJFiveGame.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VYW4NN9SFF;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/THJFiveGame/PrefixHeader.pch";
+				INFOPLIST_FILE = THJFiveGame/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xitengDiscount.futeng;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A725B1C521C8C1C800856BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FAAB839F1B94F80180184C8 /* Pods-THJFiveGame.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VYW4NN9SFF;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/THJFiveGame/PrefixHeader.pch";
+				INFOPLIST_FILE = THJFiveGame/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xitengDiscount.futeng;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A725B1C721C8C1C800856BA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VYW4NN9SFF;
+				INFOPLIST_FILE = THJFiveGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = THJ.THJFiveGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/THJFiveGame.app/THJFiveGame";
+			};
+			name = Debug;
+		};
+		A725B1C821C8C1C800856BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VYW4NN9SFF;
+				INFOPLIST_FILE = THJFiveGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = THJ.THJFiveGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/THJFiveGame.app/THJFiveGame";
+			};
+			name = Release;
+		};
+		A725B1CA21C8C1C800856BA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VYW4NN9SFF;
+				INFOPLIST_FILE = THJFiveGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = THJ.THJFiveGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = THJFiveGame;
+			};
+			name = Debug;
+		};
+		A725B1CB21C8C1C800856BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VYW4NN9SFF;
+				INFOPLIST_FILE = THJFiveGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = THJ.THJFiveGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = THJFiveGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A725B19221C8C1C600856BA8 /* Build configuration list for PBXProject "THJFiveGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A725B1C121C8C1C800856BA8 /* Debug */,
+				A725B1C221C8C1C800856BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A725B1C321C8C1C800856BA8 /* Build configuration list for PBXNativeTarget "THJFiveGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A725B1C421C8C1C800856BA8 /* Debug */,
+				A725B1C521C8C1C800856BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A725B1C621C8C1C800856BA8 /* Build configuration list for PBXNativeTarget "THJFiveGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A725B1C721C8C1C800856BA8 /* Debug */,
+				A725B1C821C8C1C800856BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A725B1C921C8C1C800856BA8 /* Build configuration list for PBXNativeTarget "THJFiveGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A725B1CA21C8C1C800856BA8 /* Debug */,
+				A725B1CB21C8C1C800856BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A725B18F21C8C1C600856BA8 /* Project object */;
+}
