@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="THJSettingsViewController">
+            <connections>
+                <outlet property="segmentDifficulty" destination="TgR-Mr-Ofg" id="I4U-6u-ThM"/>
+                <outlet property="switchMusic" destination="GTI-IZ-2qF" id="9nz-94-1D5"/>
+                <outlet property="switchSound" destination="pTw-4n-ZYK" id="vgC-iL-j6h"/>
+                <outlet property="view" destination="itB-mi-wKS" id="IJx-d4-vOu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="itB-mi-wKS">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="1JE-CF-XRU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                </imageView>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GTI-IZ-2qF" userLabel="switchMusic">
+                    <rect key="frame" x="256" y="278" width="51" height="31"/>
+                    <color key="onTintColor" red="0.1333333333" green="0.43137254899999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="switchMusic_ValueChanged:" destination="-1" eventType="valueChanged" id="qaQ-zP-z0k"/>
+                    </connections>
+                </switch>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pTw-4n-ZYK" userLabel="switchSound">
+                    <rect key="frame" x="256" y="367" width="51" height="31"/>
+                    <color key="onTintColor" red="0.1333333333" green="0.43137254899999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="switchSound_ValueChanged:" destination="-1" eventType="valueChanged" id="Rux-Q5-Ylg"/>
+                    </connections>
+                </switch>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="TgR-Mr-Ofg" userLabel="segmentDifficulty">
+                    <rect key="frame" x="70" y="191" width="235" height="29"/>
+                    <segments>
+                        <segment title="简单"/>
+                        <segment title="中等"/>
+                        <segment title="困难"/>
+                    </segments>
+                    <color key="tintColor" red="0.1333333333" green="0.43137254899999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="segementDifficulty_ValueChanged:" destination="-1" eventType="valueChanged" id="hYn-o7-iHR"/>
+                    </connections>
+                </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="难度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7M-uV-Zf9">
+                    <rect key="frame" x="70" y="142" width="49" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音乐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeC-VD-c1V">
+                    <rect key="frame" x="70" y="279" width="49" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音效" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5z-JF-TR4">
+                    <rect key="frame" x="70" y="368" width="49" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xi9-sh-Exz" userLabel="btnBack">
+                    <rect key="frame" x="149.5" y="467" width="76" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Qdd-0H-AAo"/>
+                        <constraint firstAttribute="width" constant="76" id="xL4-b5-36l"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="back">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnBack_TouchUp:" destination="-1" eventType="touchUpInside" id="Kek-2K-yqG"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="FeC-VD-c1V" firstAttribute="leading" secondItem="itB-mi-wKS" secondAttribute="leading" constant="70" id="0v5-zm-v5C"/>
+                <constraint firstItem="FeC-VD-c1V" firstAttribute="top" secondItem="TgR-Mr-Ofg" secondAttribute="bottom" constant="60" id="9yu-sF-d4D"/>
+                <constraint firstItem="GTI-IZ-2qF" firstAttribute="centerY" secondItem="FeC-VD-c1V" secondAttribute="centerY" id="GEl-9J-LK0"/>
+                <constraint firstAttribute="trailing" secondItem="GTI-IZ-2qF" secondAttribute="trailing" constant="70" id="N1f-dR-LOI"/>
+                <constraint firstItem="D5z-JF-TR4" firstAttribute="leading" secondItem="itB-mi-wKS" secondAttribute="leading" constant="70" id="QaS-dY-Ftw"/>
+                <constraint firstItem="FeC-VD-c1V" firstAttribute="centerY" secondItem="itB-mi-wKS" secondAttribute="centerY" constant="-40" id="RZ2-Of-Wpv"/>
+                <constraint firstItem="pTw-4n-ZYK" firstAttribute="centerY" secondItem="D5z-JF-TR4" secondAttribute="centerY" id="T9x-yi-AV4"/>
+                <constraint firstAttribute="trailing" secondItem="1JE-CF-XRU" secondAttribute="trailing" id="TYl-0F-1vU"/>
+                <constraint firstItem="TgR-Mr-Ofg" firstAttribute="centerX" secondItem="1JE-CF-XRU" secondAttribute="centerX" id="U6p-tu-NHM"/>
+                <constraint firstItem="D5z-JF-TR4" firstAttribute="top" secondItem="FeC-VD-c1V" secondAttribute="bottom" constant="60" id="X5I-Hz-8VJ"/>
+                <constraint firstAttribute="trailing" secondItem="pTw-4n-ZYK" secondAttribute="trailing" constant="70" id="YNT-0g-N1C"/>
+                <constraint firstItem="TgR-Mr-Ofg" firstAttribute="leading" secondItem="itB-mi-wKS" secondAttribute="leading" constant="70" id="YgM-F3-eM0"/>
+                <constraint firstItem="xi9-sh-Exz" firstAttribute="centerX" secondItem="1JE-CF-XRU" secondAttribute="centerX" id="Z8D-ww-4ku"/>
+                <constraint firstAttribute="trailing" secondItem="TgR-Mr-Ofg" secondAttribute="trailing" constant="70" id="cUZ-Xz-FPe"/>
+                <constraint firstItem="b7M-uV-Zf9" firstAttribute="leading" secondItem="itB-mi-wKS" secondAttribute="leading" constant="70" id="cp2-XK-Tcz"/>
+                <constraint firstItem="1JE-CF-XRU" firstAttribute="leading" secondItem="itB-mi-wKS" secondAttribute="leading" id="eBo-8l-SbI"/>
+                <constraint firstItem="1JE-CF-XRU" firstAttribute="top" secondItem="itB-mi-wKS" secondAttribute="top" id="l0X-Ns-2S5"/>
+                <constraint firstItem="TgR-Mr-Ofg" firstAttribute="top" secondItem="b7M-uV-Zf9" secondAttribute="bottom" constant="20" id="qyi-ak-mON"/>
+                <constraint firstItem="ECP-Jh-Pet" firstAttribute="bottom" secondItem="xi9-sh-Exz" secondAttribute="bottom" constant="160" id="zs9-gh-AZG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ECP-Jh-Pet"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="210" height="105"/>
+        <image name="background" width="930" height="1000"/>
+    </resources>
+</document>

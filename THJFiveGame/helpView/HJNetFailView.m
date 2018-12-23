@@ -51,6 +51,11 @@
         self.hidden = YES;
     }
 }
-
+-(void)hideView{
+    self.hidden = YES;
+}
+-(void)showView{
+    self.hidden = NO;
+}
 
 @end

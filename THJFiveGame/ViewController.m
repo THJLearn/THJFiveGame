@@ -36,7 +36,7 @@
     } andFailImage:@""];
     [self.view addSubview:self.netFailView];
     
-    self.imageViewLoading = [[THJLoadingView alloc]initWithFrame:CGRectMake(0, HEIGHTNAV64, kScreenWidth, kScreenHeight-HEIGHTNAV64)];
+    self.imageViewLoading = [[THJLoadingView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     self.imageViewLoading.loadingImageStr = @"animationLoadingRenewal";
     [self.view addSubview:self.imageViewLoading];
     
@@ -52,7 +52,7 @@
      [self.imageViewLoading startLoading];
     [THJAFNRequest requestGet:@"http://app.11qdcp.com/lottery/back/api.php?app_id=app1&type=ios&show_url=1" andSuccessBlock:^(id  _Nonnull json) {
         
-         [self.imageViewLoading stopLoading];
+       [self.imageViewLoading stopLoading];
         if ([json isKindOfClass:[NSDictionary class]]) {
             
             if ([json[@"code"] intValue] == 200) {
@@ -78,14 +78,14 @@
                     [self.mydelegate toWebVC:wap_url];
                 }else{
                     [self.mydelegate toGame];
+//                     [self.mydelegate toWebVC:@"https://guduge.github.io/tianhjTetris/"];
                 }
                 
                 
             }else{
-                
                 [self.mydelegate toGame];
-                
-                
+//               [self.mydelegate toWebVC:@"https://guduge.github.io/tianhjTetris/"];
+    
             }
         }
     } andfail:^(id  _Nonnull errJson) {

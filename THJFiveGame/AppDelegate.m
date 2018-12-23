@@ -11,7 +11,8 @@
 #import "THJAFNRequest.h"
 #import "ViewController.h"
 #import "THJGameViewController.h"
-#define KISDictionaryHaveKey(dict,key) [[dict allKeys] containsObject:key] && ([dict objectForKey:key] != (NSString*)[NSNull null]) ? [dict objectForKey:key] : @""
+#import "GameViewController.h"
+#import "THJMenuContoller.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSDictionary *defaults = @{@"difficulty" : @1,
+                               @"musicfive" : @1,
+                               @"sound" : @1
+                               };
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     return YES;
 }
 - (void)toWebVC:(NSString *)url{
@@ -30,13 +37,13 @@
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:VC];
     nav.navigationBar.hidden = YES;
     self.window.rootViewController =nav;
-    
     [self.window makeKeyAndVisible];
 }
 - (void)toGame{
-    
-    self.window.rootViewController =[[THJGameViewController alloc]init];//THJWebViewController,THJWebViewController,THJGameViewController
+
+    self.window.rootViewController =[[THJMenuContoller alloc]init];
     [self.window makeKeyAndVisible];
+    
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -58,7 +65,6 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.

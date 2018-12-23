@@ -11,7 +11,6 @@
 		A725B19C21C8C1C600856BA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B19B21C8C1C600856BA8 /* AppDelegate.m */; };
 		A725B19F21C8C1C600856BA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B19E21C8C1C600856BA8 /* ViewController.m */; };
 		A725B1A421C8C1C800856BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A725B1A321C8C1C800856BA8 /* Assets.xcassets */; };
-		A725B1A721C8C1C800856BA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A725B1A521C8C1C800856BA8 /* LaunchScreen.storyboard */; };
 		A725B1AA21C8C1C800856BA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1A921C8C1C800856BA8 /* main.m */; };
 		A725B1B421C8C1C800856BA8 /* THJFiveGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1B321C8C1C800856BA8 /* THJFiveGameTests.m */; };
 		A725B1BF21C8C1C800856BA8 /* THJFiveGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B1BE21C8C1C800856BA8 /* THJFiveGameUITests.m */; };
@@ -21,6 +20,28 @@
 		A725B21421C8E9D600856BA8 /* THJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B21321C8E9D600856BA8 /* THJWebViewController.m */; };
 		A725B21721C8F2BA00856BA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A725B21521C8F2BA00856BA8 /* Main.storyboard */; };
 		A725B21A21C8F89300856BA8 /* THJGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A725B21921C8F89300856BA8 /* THJGameViewController.m */; };
+		A77D1CBF21CF239B003350D9 /* BlueToothTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D1CB721CF239B003350D9 /* BlueToothTool.m */; };
+		A77D1CC021CF239B003350D9 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D1CB921CF239B003350D9 /* GameViewController.m */; };
+		A77D1CC121CF239B003350D9 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D1CBC21CF239B003350D9 /* GameView.m */; };
+		A77D1CC221CF239B003350D9 /* TipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D1CBD21CF239B003350D9 /* TipButton.m */; };
+		A7A6055A21CFA3A800D03344 /* SvUDIDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6055821CFA3A800D03344 /* SvUDIDTools.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A7A6057A21CFC41100D03344 /* GGHostListController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6056221CFC41000D03344 /* GGHostListController.m */; };
+		A7A6057C21CFC41100D03344 /* GGSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6056421CFC41000D03344 /* GGSettingsViewController.m */; };
+		A7A6057D21CFC41100D03344 /* GGMinimaxAI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6056821CFC41000D03344 /* GGMinimaxAI.m */; };
+		A7A6057E21CFC41100D03344 /* GGMove.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6056921CFC41000D03344 /* GGMove.m */; };
+		A7A6057F21CFC41100D03344 /* GGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6056A21CFC41000D03344 /* GGPlayer.m */; };
+		A7A6058021CFC41100D03344 /* GGBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6056C21CFC41000D03344 /* GGBoard.m */; };
+		A7A6058121CFC41100D03344 /* GGPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6056D21CFC41000D03344 /* GGPacket.m */; };
+		A7A6058221CFC41100D03344 /* GGGreedyAI.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6057121CFC41000D03344 /* GGGreedyAI.m */; };
+		A7A6058321CFC41100D03344 /* GGBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6057321CFC41000D03344 /* GGBoardView.m */; };
+		A7A6058421CFC41100D03344 /* move.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7A6057721CFC41000D03344 /* move.wav */; };
+		A7A6058521CFC41100D03344 /* musicfive.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A7A6057821CFC41000D03344 /* musicfive.mp3 */; };
+		A7A6058921CFCAB200D03344 /* THJMenuContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6058721CFCAB200D03344 /* THJMenuContoller.m */; };
+		A7A6058A21CFCAB200D03344 /* THJMenuContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6058821CFCAB200D03344 /* THJMenuContoller.xib */; };
+		A7A6058E21CFCF6F00D03344 /* THJBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6058C21CFCF6F00D03344 /* THJBoardController.m */; };
+		A7A6058F21CFCF6F00D03344 /* THJBoardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6058D21CFCF6F00D03344 /* THJBoardController.xib */; };
+		A7A6059321CFD62300D03344 /* THJSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A6059121CFD62300D03344 /* THJSettingsViewController.m */; };
+		A7A6059421CFD62300D03344 /* THJSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6059221CFD62300D03344 /* THJSettingsViewController.xib */; };
 		A7AEDA6121C9E95D0076600E /* HJNetFailView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AEDA6021C9E95D0076600E /* HJNetFailView.m */; };
 		A7AEDA6721CA14730076600E /* THJLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AEDA6621CA14730076600E /* THJLoadingView.m */; };
 		A7AEDA6A21CA190C0076600E /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AEDA6821CA190B0076600E /* UIView+Utils.m */; };
@@ -53,7 +74,6 @@
 		A725B19D21C8C1C600856BA8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A725B19E21C8C1C600856BA8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A725B1A321C8C1C800856BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A725B1A621C8C1C800856BA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A725B1A821C8C1C800856BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A725B1A921C8C1C800856BA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A725B1AF21C8C1C800856BA8 /* THJFiveGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THJFiveGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +93,45 @@
 		A725B21621C8F2BA00856BA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A725B21821C8F89300856BA8 /* THJGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJGameViewController.h; sourceTree = "<group>"; };
 		A725B21921C8F89300856BA8 /* THJGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJGameViewController.m; sourceTree = "<group>"; };
+		A77D1CB721CF239B003350D9 /* BlueToothTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueToothTool.m; sourceTree = "<group>"; };
+		A77D1CB821CF239B003350D9 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		A77D1CB921CF239B003350D9 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		A77D1CBA21CF239B003350D9 /* TipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipButton.h; sourceTree = "<group>"; };
+		A77D1CBB21CF239B003350D9 /* BlueToothTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueToothTool.h; sourceTree = "<group>"; };
+		A77D1CBC21CF239B003350D9 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
+		A77D1CBD21CF239B003350D9 /* TipButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipButton.m; sourceTree = "<group>"; };
+		A77D1CBE21CF239B003350D9 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		A7A6055821CFA3A800D03344 /* SvUDIDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SvUDIDTools.m; sourceTree = "<group>"; };
+		A7A6055921CFA3A800D03344 /* SvUDIDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SvUDIDTools.h; sourceTree = "<group>"; };
+		A7A6055E21CFC41000D03344 /* GGSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSettingsViewController.h; sourceTree = "<group>"; };
+		A7A6056021CFC41000D03344 /* GGHostListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGHostListController.h; sourceTree = "<group>"; };
+		A7A6056221CFC41000D03344 /* GGHostListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGHostListController.m; sourceTree = "<group>"; };
+		A7A6056421CFC41000D03344 /* GGSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSettingsViewController.m; sourceTree = "<group>"; };
+		A7A6056621CFC41000D03344 /* GGPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGPacket.h; sourceTree = "<group>"; };
+		A7A6056721CFC41000D03344 /* GGBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGBoard.h; sourceTree = "<group>"; };
+		A7A6056821CFC41000D03344 /* GGMinimaxAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGMinimaxAI.m; sourceTree = "<group>"; };
+		A7A6056921CFC41000D03344 /* GGMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGMove.m; sourceTree = "<group>"; };
+		A7A6056A21CFC41000D03344 /* GGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGPlayer.m; sourceTree = "<group>"; };
+		A7A6056B21CFC41000D03344 /* GGGreedyAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGGreedyAI.h; sourceTree = "<group>"; };
+		A7A6056C21CFC41000D03344 /* GGBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGBoard.m; sourceTree = "<group>"; };
+		A7A6056D21CFC41000D03344 /* GGPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGPacket.m; sourceTree = "<group>"; };
+		A7A6056E21CFC41000D03344 /* GGMinimaxAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGMinimaxAI.h; sourceTree = "<group>"; };
+		A7A6056F21CFC41000D03344 /* GGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGPlayer.h; sourceTree = "<group>"; };
+		A7A6057021CFC41000D03344 /* GGMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGMove.h; sourceTree = "<group>"; };
+		A7A6057121CFC41000D03344 /* GGGreedyAI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGreedyAI.m; sourceTree = "<group>"; };
+		A7A6057321CFC41000D03344 /* GGBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGBoardView.m; sourceTree = "<group>"; };
+		A7A6057421CFC41000D03344 /* GGBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGBoardView.h; sourceTree = "<group>"; };
+		A7A6057721CFC41000D03344 /* move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = move.wav; sourceTree = "<group>"; };
+		A7A6057821CFC41000D03344 /* musicfive.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicfive.mp3; sourceTree = "<group>"; };
+		A7A6058621CFCAB200D03344 /* THJMenuContoller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJMenuContoller.h; sourceTree = "<group>"; };
+		A7A6058721CFCAB200D03344 /* THJMenuContoller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJMenuContoller.m; sourceTree = "<group>"; };
+		A7A6058821CFCAB200D03344 /* THJMenuContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = THJMenuContoller.xib; sourceTree = "<group>"; };
+		A7A6058B21CFCF6F00D03344 /* THJBoardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJBoardController.h; sourceTree = "<group>"; };
+		A7A6058C21CFCF6F00D03344 /* THJBoardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJBoardController.m; sourceTree = "<group>"; };
+		A7A6058D21CFCF6F00D03344 /* THJBoardController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = THJBoardController.xib; sourceTree = "<group>"; };
+		A7A6059021CFD62300D03344 /* THJSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THJSettingsViewController.h; sourceTree = "<group>"; };
+		A7A6059121CFD62300D03344 /* THJSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THJSettingsViewController.m; sourceTree = "<group>"; };
+		A7A6059221CFD62300D03344 /* THJSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = THJSettingsViewController.xib; sourceTree = "<group>"; };
 		A7AEDA5F21C9E95D0076600E /* HJNetFailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJNetFailView.h; sourceTree = "<group>"; };
 		A7AEDA6021C9E95D0076600E /* HJNetFailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJNetFailView.m; sourceTree = "<group>"; };
 		A7AEDA6321C9F1AF0076600E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -153,6 +212,8 @@
 		A725B19921C8C1C600856BA8 /* THJFiveGame */ = {
 			isa = PBXGroup;
 			children = (
+				A7A6055B21CFC41000D03344 /* fivesource */,
+				A77D1CB621CF239B003350D9 /* five1 */,
 				A7AEDA6B21CA1B600076600E /* source */,
 				A7AEDA5E21C9E95D0076600E /* helpView */,
 				A725B21521C8F2BA00856BA8 /* Main.storyboard */,
@@ -169,7 +230,6 @@
 				A7AEDA6321C9F1AF0076600E /* PrefixHeader.pch */,
 				A7AEDA6421C9F1C50076600E /* THJGameHeader.h */,
 				A725B1A321C8C1C800856BA8 /* Assets.xcassets */,
-				A725B1A521C8C1C800856BA8 /* LaunchScreen.storyboard */,
 				A725B1A821C8C1C800856BA8 /* Info.plist */,
 				A725B1A921C8C1C800856BA8 /* main.m */,
 			);
@@ -214,12 +274,105 @@
 		A725B1D521C8C37200856BA8 /* tool */ = {
 			isa = PBXGroup;
 			children = (
+				A7A6055921CFA3A800D03344 /* SvUDIDTools.h */,
+				A7A6055821CFA3A800D03344 /* SvUDIDTools.m */,
 				A725B1D621C8C37200856BA8 /* UIView+Frame.m */,
 				A725B1D721C8C37200856BA8 /* UIView+Frame.h */,
 				A725B1D921C8C39200856BA8 /* THJAFNRequest.h */,
 				A725B1DA21C8C39200856BA8 /* THJAFNRequest.m */,
 			);
 			path = tool;
+			sourceTree = "<group>";
+		};
+		A77D1CB621CF239B003350D9 /* five1 */ = {
+			isa = PBXGroup;
+			children = (
+				A77D1CB721CF239B003350D9 /* BlueToothTool.m */,
+				A77D1CB821CF239B003350D9 /* GameView.h */,
+				A77D1CB921CF239B003350D9 /* GameViewController.m */,
+				A77D1CBA21CF239B003350D9 /* TipButton.h */,
+				A77D1CBB21CF239B003350D9 /* BlueToothTool.h */,
+				A77D1CBC21CF239B003350D9 /* GameView.m */,
+				A77D1CBD21CF239B003350D9 /* TipButton.m */,
+				A77D1CBE21CF239B003350D9 /* GameViewController.h */,
+			);
+			path = five1;
+			sourceTree = SOURCE_ROOT;
+		};
+		A7A6055B21CFC41000D03344 /* fivesource */ = {
+			isa = PBXGroup;
+			children = (
+				A7A6055C21CFC41000D03344 /* Controller */,
+				A7A6056521CFC41000D03344 /* model */,
+				A7A6057221CFC41000D03344 /* View */,
+				A7A6057521CFC41000D03344 /* Resource */,
+			);
+			path = fivesource;
+			sourceTree = "<group>";
+		};
+		A7A6055C21CFC41000D03344 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A7A6055E21CFC41000D03344 /* GGSettingsViewController.h */,
+				A7A6056021CFC41000D03344 /* GGHostListController.h */,
+				A7A6056221CFC41000D03344 /* GGHostListController.m */,
+				A7A6056421CFC41000D03344 /* GGSettingsViewController.m */,
+				A7A6058B21CFCF6F00D03344 /* THJBoardController.h */,
+				A7A6058C21CFCF6F00D03344 /* THJBoardController.m */,
+				A7A6058D21CFCF6F00D03344 /* THJBoardController.xib */,
+				A7A6058621CFCAB200D03344 /* THJMenuContoller.h */,
+				A7A6058721CFCAB200D03344 /* THJMenuContoller.m */,
+				A7A6059021CFD62300D03344 /* THJSettingsViewController.h */,
+				A7A6059121CFD62300D03344 /* THJSettingsViewController.m */,
+				A7A6059221CFD62300D03344 /* THJSettingsViewController.xib */,
+				A7A6058821CFCAB200D03344 /* THJMenuContoller.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7A6056521CFC41000D03344 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A7A6056621CFC41000D03344 /* GGPacket.h */,
+				A7A6056721CFC41000D03344 /* GGBoard.h */,
+				A7A6056821CFC41000D03344 /* GGMinimaxAI.m */,
+				A7A6056921CFC41000D03344 /* GGMove.m */,
+				A7A6056A21CFC41000D03344 /* GGPlayer.m */,
+				A7A6056B21CFC41000D03344 /* GGGreedyAI.h */,
+				A7A6056C21CFC41000D03344 /* GGBoard.m */,
+				A7A6056D21CFC41000D03344 /* GGPacket.m */,
+				A7A6056E21CFC41000D03344 /* GGMinimaxAI.h */,
+				A7A6056F21CFC41000D03344 /* GGPlayer.h */,
+				A7A6057021CFC41000D03344 /* GGMove.h */,
+				A7A6057121CFC41000D03344 /* GGGreedyAI.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A7A6057221CFC41000D03344 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7A6057321CFC41000D03344 /* GGBoardView.m */,
+				A7A6057421CFC41000D03344 /* GGBoardView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A7A6057521CFC41000D03344 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A7A6057621CFC41000D03344 /* Sound */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A7A6057621CFC41000D03344 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				A7A6057721CFC41000D03344 /* move.wav */,
+				A7A6057821CFC41000D03344 /* musicfive.mp3 */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		A7AEDA5E21C9E95D0076600E /* helpView */ = {
@@ -347,10 +500,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A6058A21CFCAB200D03344 /* THJMenuContoller.xib in Resources */,
 				A725B21721C8F2BA00856BA8 /* Main.storyboard in Resources */,
-				A725B1A721C8C1C800856BA8 /* LaunchScreen.storyboard in Resources */,
 				A725B1A421C8C1C800856BA8 /* Assets.xcassets in Resources */,
+				A7A6058421CFC41100D03344 /* move.wav in Resources */,
+				A7A6058F21CFCF6F00D03344 /* THJBoardController.xib in Resources */,
 				A7AEDA6D21CA1B890076600E /* animationLoadingRenewal.gif in Resources */,
+				A7A6058521CFC41100D03344 /* musicfive.mp3 in Resources */,
+				A7A6059421CFD62300D03344 /* THJSettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,17 +553,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A6057E21CFC41100D03344 /* GGMove.m in Sources */,
 				A725B21421C8E9D600856BA8 /* THJWebViewController.m in Sources */,
+				A7A6057A21CFC41100D03344 /* GGHostListController.m in Sources */,
 				A725B21A21C8F89300856BA8 /* THJGameViewController.m in Sources */,
+				A7A6059321CFD62300D03344 /* THJSettingsViewController.m in Sources */,
 				A725B1DB21C8C39200856BA8 /* THJAFNRequest.m in Sources */,
+				A7A6057D21CFC41100D03344 /* GGMinimaxAI.m in Sources */,
 				A725B19F21C8C1C600856BA8 /* ViewController.m in Sources */,
 				A7AEDA6721CA14730076600E /* THJLoadingView.m in Sources */,
+				A77D1CC021CF239B003350D9 /* GameViewController.m in Sources */,
+				A7A6058321CFC41100D03344 /* GGBoardView.m in Sources */,
+				A7A6058921CFCAB200D03344 /* THJMenuContoller.m in Sources */,
+				A77D1CC121CF239B003350D9 /* GameView.m in Sources */,
 				A7AEDA6A21CA190C0076600E /* UIView+Utils.m in Sources */,
+				A7A6055A21CFA3A800D03344 /* SvUDIDTools.m in Sources */,
+				A7A6057F21CFC41100D03344 /* GGPlayer.m in Sources */,
+				A77D1CBF21CF239B003350D9 /* BlueToothTool.m in Sources */,
 				A725B1D321C8C29C00856BA8 /* CheckerboardView.m in Sources */,
 				A725B1AA21C8C1C800856BA8 /* main.m in Sources */,
+				A7A6058021CFC41100D03344 /* GGBoard.m in Sources */,
+				A7A6057C21CFC41100D03344 /* GGSettingsViewController.m in Sources */,
 				A7AEDA6121C9E95D0076600E /* HJNetFailView.m in Sources */,
+				A7A6058221CFC41100D03344 /* GGGreedyAI.m in Sources */,
 				A725B1D821C8C37200856BA8 /* UIView+Frame.m in Sources */,
 				A725B19C21C8C1C600856BA8 /* AppDelegate.m in Sources */,
+				A7A6058E21CFCF6F00D03344 /* THJBoardController.m in Sources */,
+				A7A6058121CFC41100D03344 /* GGPacket.m in Sources */,
+				A77D1CC221CF239B003350D9 /* TipButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,14 +616,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A725B1A521C8C1C800856BA8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A725B1A621C8C1C800856BA8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		A725B21521C8F2BA00856BA8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -580,6 +746,7 @@
 			baseConfigurationReference = BEA47336C7757DA759A4AF2B /* Pods-THJFiveGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VYW4NN9SFF;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/THJFiveGame/PrefixHeader.pch";
@@ -601,6 +768,7 @@
 			baseConfigurationReference = 2FAAB839F1B94F80180184C8 /* Pods-THJFiveGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VYW4NN9SFF;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/THJFiveGame/PrefixHeader.pch";

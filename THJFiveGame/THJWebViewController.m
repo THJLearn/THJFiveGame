@@ -7,9 +7,16 @@
 //
 
 #import "THJWebViewController.h"
+#import "HJNetFailView.h"
 #import <WebKit/WebKit.h>
+#import "AppDelegate.h"
+#import "THJLoadingView.h"
 @interface THJWebViewController ()<WKNavigationDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate>
+@property(nonatomic,strong)HJNetFailView * netFailView;
 @property  (nonatomic,strong) WKWebView *webView;
+@property (nonatomic , strong) THJLoadingView * imageViewLoading;
+
+
 
 //进度条
 @property(nonatomic,strong) UIView *progressView;
@@ -42,8 +49,18 @@
     [self.view addSubview:self.webView];
     WKNavigation *backNavigation = [self.webView goBack];
     self.backNavigation =backNavigation;
-    
-    [self.progressView.layer addSublayer:self.progresslayer];
+    [self.imageViewLoading startLoading];
+    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
+        self.netFailView = [[HJNetFailView alloc]initWithFrame:CGRectMake(0, HEIGHTNAV64, kScreenWidth, kScreenHeight-HEIGHTNAV64)];
+        __weak THJWebViewController * myself = self;
+        [self.netFailView setSubViewsWithTapBlock:^{
+            
+            [myself reloadData];
+            
+        } andFailImage:@""];
+        [self.view addSubview:self.netFailView];
+    }
+//    [self.progressView.layer addSublayer:self.progresslayer];
     //设置导航栏item样式
     [self setupNavbarItem];
 }
@@ -93,16 +110,16 @@
 #pragma mark -设置进度条进度
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
-        self.progresslayer.opacity = 1;
-        self.progresslayer.frame = CGRectMake(0, 0, self.view.bounds.size.width * [change[NSKeyValueChangeNewKey] floatValue], 3);
-        if ([change[NSKeyValueChangeNewKey] floatValue] == 1) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                self.progresslayer.opacity = 0;
-            });
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                self.progresslayer.frame = CGRectMake(0, 0, 0, 3);
-            });
-        }
+//        self.progresslayer.opacity = 1;
+//        self.progresslayer.frame = CGRectMake(0, 0, self.view.bounds.size.width * [change[NSKeyValueChangeNewKey] floatValue], 3);
+//        if ([change[NSKeyValueChangeNewKey] floatValue] == 1) {
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                self.progresslayer.opacity = 0;
+//            });
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                self.progresslayer.frame = CGRectMake(0, 0, 0, 3);
+//            });
+//        }
     }else if ([keyPath isEqualToString:@"title"]) {
         if (object == self.webView) {
             self.title = self.webView.title;
@@ -115,9 +132,94 @@
     }
 }
 
+/**
+ webView中弹出警告框时调用, 只能有一个按钮
+ 
+ @param webView webView
+ @param message 提示信息
+ @param frame 可用于区分哪个窗口调用的
+ @param completionHandler 警告框消失的时候调用, 回调给JS
+ */
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"警告" message:message preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"我知道了" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+/** 对应js的confirm方法
+ webView中弹出选择框时调用, 两个按钮
+ 
+ @param webView webView description
+ @param message 提示信息
+ @param frame 可用于区分哪个窗口调用的
+ @param completionHandler 确认框消失的时候调用, 回调给JS, 参数为选择结果: YES or NO
+ */
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请选择" message:message preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"同意" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(YES);
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"不同意" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(NO);
+    }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+/** 对应js的prompt方法
+ webView中弹出输入框时调用, 两个按钮 和 一个输入框
+ 
+ @param webView webView description
+ @param prompt 提示信息
+ @param defaultText 默认提示文本
+ @param frame 可用于区分哪个窗口调用的
+ @param completionHandler 输入框消失的时候调用, 回调给JS, 参数为输入的内容
+ */
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable result))completionHandler {
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入" message:prompt preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入";
+    }];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        
+        UITextField *tf = [alert.textFields firstObject];
+        
+        completionHandler(tf.text);
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(defaultText);
+    }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark -WKNavigationDelegate 网页代理
 //拦截网页加载，主动发送请求
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+    
+    
+    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
+        
+        [self.netFailView hideView];
+    }
     
     NSString *requestString = navigationAction.request.URL.absoluteString;
     if ([requestString hasPrefix:@"myweb:imageClick:"]) {
@@ -168,13 +270,27 @@
         self.backNavigation = nil;
 
     }
+    
+    [self.netFailView hideView];
+    [self.imageViewLoading stopLoading];
+    
+    
 }
 //网页已经开始加载调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
+    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
+    }
     
 }
 //页面加载失败调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
+    
+    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
+        
+         [self.netFailView showView];
+    }
+    [self.imageViewLoading stopLoading];
+    
     
 }
 //当内容开始返回时调用，即服务器已经在想客服端发送网页数据
@@ -221,12 +337,28 @@
 
 
 #pragma mark - 懒加载
+- (THJLoadingView *)imageViewLoading{
+    if (_imageViewLoading == nil) {
+        _imageViewLoading = [[THJLoadingView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        _imageViewLoading.loadingImageStr = @"animationLoadingRenewal";
+        [self.view addSubview:_imageViewLoading];
+    }
+    return _imageViewLoading;
+}
+- (void)reloadData{
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webUrl]]];
+}
 - (WKWebView *)webView{
     NSString* url = self.webUrl;
     if (_webView == nil) {
         _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         
+//       NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+
+                          
         [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+//        NSURL *fileURL = [NSURL fileURLWithPath:path];
+//         [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
         /*****************注**********************/
         _webView.navigationDelegate = self;
         //添加进度属性监听
@@ -245,7 +377,7 @@
 - (UIView *)progressView{
     if (_progressView == nil) {
         //进度条
-        _progressView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), 3)];
+        _progressView = [[UIView alloc]initWithFrame:CGRectMake(0, kiPhoneXStateHeight+20, CGRectGetWidth(self.view.frame), 3)];
         _progressView.backgroundColor = [UIColor clearColor];
         [self.view addSubview:_progressView];
     }

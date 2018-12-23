@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="THJMenuContoller">
+            <connections>
+                <outlet property="backgroundImage" destination="MTn-vL-Ack" id="mbS-3I-aDk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="MTn-vL-Ack">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLx-kV-zrB">
+                    <rect key="frame" x="107.5" y="189.5" width="160" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="em1-19-mfD"/>
+                        <constraint firstAttribute="width" constant="160" id="sIs-Oc-jkm"/>
+                    </constraints>
+                    <state key="normal" image="single">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <state key="highlighted" image="single_highlighted"/>
+                    <connections>
+                        <action selector="btnSinglePlayer_TouchUp:" destination="-1" eventType="touchUpInside" id="Dyk-1l-yXg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XL-Fg-kx4">
+                    <rect key="frame" x="107.5" y="308.5" width="160" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="DJD-IS-bsc"/>
+                        <constraint firstAttribute="height" constant="50" id="Jhg-RJ-SDK"/>
+                    </constraints>
+                    <state key="normal" image="double">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <state key="highlighted" image="double_highlighted"/>
+                    <connections>
+                        <action selector="btnDoublePlayer_TouchUp:" destination="-1" eventType="touchUpInside" id="ie7-h9-AyP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWr-hR-80K">
+                    <rect key="frame" x="107.5" y="431" width="160" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="QmD-sc-Pph"/>
+                        <constraint firstAttribute="width" constant="160" id="rg6-x8-tap"/>
+                    </constraints>
+                    <state key="normal" image="settings"/>
+                    <state key="highlighted" image="settings_highlighted"/>
+                    <connections>
+                        <action selector="btnSetting_TouchUp:" destination="-1" eventType="touchUpInside" id="6kW-si-ICL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="baseline" secondItem="tWr-hR-80K" secondAttribute="baseline" constant="-122.5" id="C29-Cj-j89"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="E5D-wC-J6t"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="leading" secondItem="tWr-hR-80K" secondAttribute="leading" id="StV-cJ-NLL"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Y12-tG-4aJ"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerX" secondItem="MTn-vL-Ack" secondAttribute="centerX" id="c8Y-ux-R33"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="leading" secondItem="pLx-kV-zrB" secondAttribute="leading" id="eLw-a9-wLK"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="top" secondItem="pLx-kV-zrB" secondAttribute="bottom" constant="69" id="lSx-Rn-XcP"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerY" secondItem="MTn-vL-Ack" secondAttribute="centerY" id="rEd-JD-BEz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="background" width="930" height="1000"/>
+        <image name="double" width="430" height="125"/>
+        <image name="double_highlighted" width="430" height="125"/>
+        <image name="settings" width="430" height="125"/>
+        <image name="settings_highlighted" width="430" height="125"/>
+        <image name="single" width="430" height="125"/>
+        <image name="single_highlighted" width="430" height="125"/>
+    </resources>
+</document>

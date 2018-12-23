@@ -13,4 +13,6 @@
 
 -(void)setSubViewsWithTapBlock:(void(^)(void))tapBlock andFailImage:(NSString *)failImageStr;
 - (void)failViewHiddenWithArr:(NSArray *)dataArr;
+-(void)hideView;
+-(void)showView;
 @end
