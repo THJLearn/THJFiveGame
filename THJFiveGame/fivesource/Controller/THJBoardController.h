@@ -7,22 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GGBoardView.h"
-#import "GGPlayer.h"
+#import "THJBoardView.h"
+#import "THJPlayer.h"
 
-typedef NS_ENUM(NSInteger, GGMode)
+typedef NS_ENUM(NSInteger, THJMode)
 {
-    GGModeSingle,
-    GGModeDouble,
-    GGModeLAN
+    THJModeSingle,
+    THJModeDouble,
+    THJModeLAN
 };
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface THJBoardController : UIViewController<GGBoardViewDelegate>
-@property (weak, nonatomic) IBOutlet GGBoardView *boardView;
-@property (assign, nonatomic) enum GGMode gameMode;
+@interface THJBoardController : UIViewController<THJBoardViewDelegate>
+@property (weak, nonatomic) IBOutlet THJBoardView *boardView;
+@property (assign, nonatomic) enum THJMode gameMode;
 @end
 
 NS_ASSUME_NONNULL_END

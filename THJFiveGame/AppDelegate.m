@@ -10,8 +10,6 @@
 #import "THJWebViewController.h"
 #import "THJAFNRequest.h"
 #import "ViewController.h"
-#import "THJGameViewController.h"
-#import "GameViewController.h"
 #import "THJMenuContoller.h"
 
 @interface AppDelegate ()

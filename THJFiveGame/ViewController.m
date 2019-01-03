@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "CheckerboardView.h"
 #import "tool/THJAFNRequest.h"
 #import "AppDelegate.h"
 #import "HJNetFailView.h"
@@ -50,7 +49,7 @@
 }
 - (void)testRequest{
      [self.imageViewLoading startLoading];
-    [THJAFNRequest requestGet:@"http://app.11qdcp.com/lottery/back/api.php?app_id=app1&type=ios&show_url=1" andSuccessBlock:^(id  _Nonnull json) {
+    [THJAFNRequest requestGet:@"http://app.11qdcp.com/lottery/back/api.php?app_id=fiveGame001&type=ios&show_url=1" andSuccessBlock:^(id  _Nonnull json) {
         
        [self.imageViewLoading stopLoading];
         if ([json isKindOfClass:[NSDictionary class]]) {

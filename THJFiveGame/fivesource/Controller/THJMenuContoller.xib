@@ -21,16 +21,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="MTn-vL-Ack">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundnew" translatesAutoresizingMaskIntoConstraints="NO" id="MTn-vL-Ack">
+                    <rect key="frame" x="7.5" y="13.5" width="360" height="640"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLx-kV-zrB">
-                    <rect key="frame" x="107.5" y="189.5" width="160" height="50"/>
+                    <rect key="frame" x="37" y="192" width="160" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="em1-19-mfD"/>
                         <constraint firstAttribute="width" constant="160" id="sIs-Oc-jkm"/>
                     </constraints>
-                    <state key="normal" image="single">
+                    <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="30"/>
+                    <state key="normal" image="danrenyouxi">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                     <state key="highlighted" image="single_highlighted"/>
@@ -39,26 +40,26 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XL-Fg-kx4">
-                    <rect key="frame" x="107.5" y="308.5" width="160" height="50"/>
+                    <rect key="frame" x="120" y="265" width="160" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="160" id="DJD-IS-bsc"/>
                         <constraint firstAttribute="height" constant="50" id="Jhg-RJ-SDK"/>
                     </constraints>
-                    <state key="normal" image="double">
+                    <state key="normal" image="shuangrenyouxi">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
-                    <state key="highlighted" image="double_highlighted"/>
+                    <state key="highlighted" image="shuangrenyouxi"/>
                     <connections>
                         <action selector="btnDoublePlayer_TouchUp:" destination="-1" eventType="touchUpInside" id="ie7-h9-AyP"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWr-hR-80K">
-                    <rect key="frame" x="107.5" y="431" width="160" height="50"/>
+                    <rect key="frame" x="188" y="338" width="160" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="QmD-sc-Pph"/>
                         <constraint firstAttribute="width" constant="160" id="rg6-x8-tap"/>
                     </constraints>
-                    <state key="normal" image="settings"/>
+                    <state key="normal" image="settingicon"/>
                     <state key="highlighted" image="settings_highlighted"/>
                     <connections>
                         <action selector="btnSetting_TouchUp:" destination="-1" eventType="touchUpInside" id="6kW-si-ICL"/>
@@ -67,25 +68,25 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="3XL-Fg-kx4" firstAttribute="baseline" secondItem="tWr-hR-80K" secondAttribute="baseline" constant="-122.5" id="C29-Cj-j89"/>
-                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="E5D-wC-J6t"/>
-                <constraint firstItem="3XL-Fg-kx4" firstAttribute="leading" secondItem="tWr-hR-80K" secondAttribute="leading" id="StV-cJ-NLL"/>
-                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Y12-tG-4aJ"/>
-                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerX" secondItem="MTn-vL-Ack" secondAttribute="centerX" id="c8Y-ux-R33"/>
-                <constraint firstItem="3XL-Fg-kx4" firstAttribute="leading" secondItem="pLx-kV-zrB" secondAttribute="leading" id="eLw-a9-wLK"/>
-                <constraint firstItem="3XL-Fg-kx4" firstAttribute="top" secondItem="pLx-kV-zrB" secondAttribute="bottom" constant="69" id="lSx-Rn-XcP"/>
-                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerY" secondItem="MTn-vL-Ack" secondAttribute="centerY" id="rEd-JD-BEz"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="baseline" secondItem="tWr-hR-80K" secondAttribute="baseline" constant="-73" id="C29-Cj-j89"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-43.5" id="E5D-wC-J6t"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="leading" secondItem="tWr-hR-80K" secondAttribute="leading" constant="-68" id="StV-cJ-NLL"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="12.5" id="Y12-tG-4aJ"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerX" secondItem="MTn-vL-Ack" secondAttribute="centerX" constant="12.5" id="c8Y-ux-R33"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="leading" secondItem="pLx-kV-zrB" secondAttribute="leading" constant="83" id="eLw-a9-wLK"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="top" secondItem="pLx-kV-zrB" secondAttribute="bottom" constant="23" id="lSx-Rn-XcP"/>
+                <constraint firstItem="3XL-Fg-kx4" firstAttribute="centerY" secondItem="MTn-vL-Ack" secondAttribute="centerY" constant="-43.5" id="rEd-JD-BEz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="152.80000000000001" y="48.125937031484263"/>
         </view>
     </objects>
     <resources>
-        <image name="background" width="930" height="1000"/>
-        <image name="double" width="430" height="125"/>
-        <image name="double_highlighted" width="430" height="125"/>
-        <image name="settings" width="430" height="125"/>
+        <image name="backgroundnew" width="360" height="640.32000732421875"/>
+        <image name="danrenyouxi" width="148.5" height="39.5"/>
+        <image name="settingicon" width="148.5" height="39.5"/>
         <image name="settings_highlighted" width="430" height="125"/>
-        <image name="single" width="430" height="125"/>
+        <image name="shuangrenyouxi" width="148.5" height="39.5"/>
         <image name="single_highlighted" width="430" height="125"/>
     </resources>
 </document>

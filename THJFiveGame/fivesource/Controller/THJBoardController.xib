@@ -27,11 +27,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="FzL-LC-zth">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7F4-Jw-bBg" customClass="GGBoardView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7F4-Jw-bBg" customClass="THJBoardView">
                     <rect key="frame" x="0.0" y="146" width="375" height="375"/>
-                    <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.75276690239697885" blue="0.46494749870847063" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="7F4-Jw-bBg" secondAttribute="height" multiplier="1:1" id="sG1-CX-T8K"/>
                     </constraints>
@@ -43,7 +43,7 @@
                         <constraint firstAttribute="height" constant="25" id="uXq-19-cvc"/>
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" image="reset"/>
+                    <state key="normal" image="chongkai"/>
                     <state key="disabled" title="重开"/>
                     <connections>
                         <action selector="btnReset_TouchUp:" destination="-1" eventType="touchUpInside" id="S5V-1d-NdE"/>
@@ -56,7 +56,7 @@
                         <constraint firstAttribute="height" constant="25" id="lz2-K9-sIU"/>
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" image="undo"/>
+                    <state key="normal" image="huiqi"/>
                     <state key="disabled" title="悔棋"/>
                     <connections>
                         <action selector="btnUndo_TouchUp:" destination="-1" eventType="touchUpInside" id="kDD-Yf-lk2"/>
@@ -69,7 +69,7 @@
                         <constraint firstAttribute="height" constant="25" id="pRo-77-5Oz"/>
                     </constraints>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" image="back"/>
+                    <state key="normal" image="fanhui"/>
                     <connections>
                         <action selector="btnBack_TouchUp:" destination="-1" eventType="touchUpInside" id="Pre-cY-eK6"/>
                     </connections>
@@ -136,11 +136,11 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="210" height="105"/>
-        <image name="background2" width="599" height="736"/>
-        <image name="piece_black" width="80" height="80"/>
-        <image name="piece_white" width="80" height="80"/>
-        <image name="reset" width="210" height="105"/>
-        <image name="undo" width="210" height="105"/>
+        <image name="background2" width="375" height="667"/>
+        <image name="chongkai" width="71.5" height="34.5"/>
+        <image name="fanhui" width="71.5" height="34.5"/>
+        <image name="huiqi" width="71.5" height="34.5"/>
+        <image name="piece_black" width="40" height="39.5"/>
+        <image name="piece_white" width="40" height="40"/>
     </resources>
 </document>

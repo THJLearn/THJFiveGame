@@ -50,7 +50,7 @@
     WKNavigation *backNavigation = [self.webView goBack];
     self.backNavigation =backNavigation;
     [self.imageViewLoading startLoading];
-    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
+//    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
         self.netFailView = [[HJNetFailView alloc]initWithFrame:CGRectMake(0, HEIGHTNAV64, kScreenWidth, kScreenHeight-HEIGHTNAV64)];
         __weak THJWebViewController * myself = self;
         [self.netFailView setSubViewsWithTapBlock:^{
@@ -59,7 +59,7 @@
             
         } andFailImage:@""];
         [self.view addSubview:self.netFailView];
-    }
+//    }
 //    [self.progressView.layer addSublayer:self.progresslayer];
     //设置导航栏item样式
     [self setupNavbarItem];
@@ -216,10 +216,10 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     
     
-    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
-        
+//    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
+    
         [self.netFailView hideView];
-    }
+//    }
     
     NSString *requestString = navigationAction.request.URL.absoluteString;
     if ([requestString hasPrefix:@"myweb:imageClick:"]) {
@@ -285,10 +285,10 @@
 //页面加载失败调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
     
-    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
-        
+//    if ([self.webUrl isEqualToString:@"https://guduge.github.io/tianhjTetris/"]) {
+    
          [self.netFailView showView];
-    }
+//    }
     [self.imageViewLoading stopLoading];
     
     

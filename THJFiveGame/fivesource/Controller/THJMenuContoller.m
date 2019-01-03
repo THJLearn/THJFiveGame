@@ -8,9 +8,9 @@
 
 #import "THJMenuContoller.h"
 #import "THJBoardController.h"
-#import "GGPlayer.h"
+#import "THJPlayer.h"
 #import "THJSettingsViewController.h"
-NSString * const MUSIC_NAME = @"music.mp3";
+NSString * const MUSIC_NAME = @"musicfive.mp3";
 NSString * const MOVE_SOUND_NAME = @"move.wav";
 
 @interface THJMenuContoller ()
@@ -36,7 +36,7 @@ NSString * const MOVE_SOUND_NAME = @"move.wav";
     
     _moveSoundPlayer = [self playerWithFile:MOVE_SOUND_NAME];
     
-    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"music"] == 1) {
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"musicfive"] == 1) {
         [_musicPlayer play];
     }
 }
@@ -63,7 +63,7 @@ NSString * const MOVE_SOUND_NAME = @"move.wav";
 - (IBAction)btnSinglePlayer_TouchUp:(UIButton *)sender {
     
     THJBoardController *boardController = [[THJBoardController alloc]init];
-    boardController.gameMode = GGModeSingle;
+    boardController.gameMode = THJModeSingle;
     [self presentViewController:boardController animated:YES completion:^{
         
     }];
@@ -72,7 +72,7 @@ NSString * const MOVE_SOUND_NAME = @"move.wav";
 
 - (IBAction)btnDoublePlayer_TouchUp:(UIButton *)sender {
     THJBoardController *boardController = [[THJBoardController alloc]init];
-    boardController.gameMode = GGModeDouble;
+    boardController.gameMode = THJModeDouble;
     [self presentViewController:boardController animated:YES completion:^{
         
     }];
@@ -91,11 +91,11 @@ NSString * const MOVE_SOUND_NAME = @"move.wav";
         NSLog(@"%@", button.titleLabel.text);
         THJBoardController *boardController = segue.destinationViewController;
         if ([button.titleLabel.text isEqual: @"单人游戏"]) {
-            boardController.gameMode = GGModeSingle;
+            boardController.gameMode = THJModeSingle;
         } else if ([button.titleLabel.text isEqual: @"双人游戏"]) {
-            boardController.gameMode = GGModeDouble;
+            boardController.gameMode = THJModeDouble;
         } else if ([button.titleLabel.text isEqual: @"联机游戏"]) {
-            boardController.gameMode = GGModeLAN;
+            boardController.gameMode = THJModeLAN;
         }
     }
 }

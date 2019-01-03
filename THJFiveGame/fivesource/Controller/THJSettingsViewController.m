@@ -10,8 +10,8 @@
 #import "THJMenuContoller.h"
 @interface THJSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentDifficulty;
-@property (weak, nonatomic) IBOutlet UISwitch *switchSound;
-@property (weak, nonatomic) IBOutlet UISwitch *switchMusic;
+@property (weak, nonatomic) IBOutlet UISwitch *thjswitchSound_setting;
+@property (weak, nonatomic) IBOutlet UISwitch *thjswitchMusic_setting;
 @end
 
 @implementation THJSettingsViewController
@@ -21,8 +21,8 @@
     
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [_segmentDifficulty setSelectedSegmentIndex:[defaults integerForKey:@"difficulty"]];
-    [_switchSound setOn:[defaults integerForKey:@"sound"]];
-    [_switchMusic setOn:[defaults integerForKey:@"musicfive"]];
+    [_thjswitchSound_setting setOn:[defaults integerForKey:@"sound"]];
+    [_thjswitchMusic_setting setOn:[defaults integerForKey:@"musicfive"]];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -32,9 +32,9 @@
     [defaults synchronize];
 }
 
-- (IBAction)switchMusic_ValueChanged:(UISwitch *)sender {
+- (IBAction)thjswitchMusic_settingthj_faiveValueChanged:(UISwitch *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:@(sender.on).integerValue forKey:@"music"];
+    [defaults setInteger:@(sender.on).integerValue forKey:@"musicfive"];
     [defaults synchronize];
     
     THJMenuContoller *menuController = (THJMenuContoller *)self.presentingViewController;
@@ -48,7 +48,7 @@
 }
 
 
-- (IBAction)switchSound_ValueChanged:(UISwitch *)sender {
+- (IBAction)thjSwitchsound_settingValueChange:(UISwitch *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:@(sender.on).integerValue forKey:@"sound"];
     [defaults synchronize];
@@ -60,7 +60,9 @@
     } else {
         menuController.moveSoundPlayer.volume = 0;
     }
+    
 }
+
 
 - (IBAction)btnBack_TouchUp:(UIButton *)sender {
     [self dismissViewControllerAnimated:NO completion:nil];

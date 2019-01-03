@@ -7,7 +7,7 @@
 //
 
 #import "THJBoardController.h"
-#import "GGPacket.h"
+#import "THJPacket.h"
 #import "THJMenuContoller.h"
 #import <CocoaAsyncSocket/GCDAsyncSocket.h>
 
@@ -16,9 +16,9 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 
 @interface THJBoardController ()<GCDAsyncSocketDelegate>
 {
-    GGBoard *board;
-    GGPlayerType playerType;
-    GGPlayer *AI;
+    THJBoard *board;
+    THJPlayerType playerType;
+    THJPlayer *AI;
     int timeSecBlack;
     int timeMinBlack;
     int timeSecWhite;
@@ -27,8 +27,8 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
     BOOL isHost;
     BOOL oppositeReset;
     BOOL shouldDismiss;
-    GGMove *whiteMove;
-    GGMove *blackMove;
+    THJMove *whiteMove;
+    THJMove *blackMove;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *lblInformation;
@@ -54,10 +54,10 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [super viewDidLoad];
-    board = [[GGBoard alloc] init];
+    board = [[THJBoard alloc] init];
     
     // First piece will always be black
-    playerType = GGPlayerTypeBlack;
+    playerType = THJPlayerTypeBlack;
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -66,15 +66,15 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
     _boardView.delegate = self;
     
     _btnUndo.enabled = NO;
-    if (_gameMode == GGModeSingle) {
+    if (_gameMode == THJModeSingle) {
         [self choosePlayerType];
-    } else if (_gameMode == GGModeDouble) {
+    } else if (_gameMode == THJModeDouble) {
         [self startTimer];
-    } else if (_gameMode == GGModeLAN && shouldDismiss == YES) {
+    } else if (_gameMode == THJModeLAN && shouldDismiss == YES) {
         [self dismissViewControllerAnimated:NO completion:nil];
-    } else if (_gameMode == GGModeLAN && _socket == nil) {
+    } else if (_gameMode == THJModeLAN && _socket == nil) {
         [self performSegueWithIdentifier:@"findGame" sender:nil];
-    } else if (_gameMode == GGModeLAN && _socket != nil) {
+    } else if (_gameMode == THJModeLAN && _socket != nil) {
         [self startGameInLANMode];
     }
 }
@@ -95,32 +95,32 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 
 - (void)choosePlayerType {
     
-    GGDifficulty difficulty;
+    THJDifficulty difficulty;
     
     switch ([[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"]) {
         case 0:
-            difficulty = GGDifficultyEasy;
+            difficulty = THJDifficultyEasy;
             break;
         case 1:
-            difficulty = GGDifficultyMedium;
+            difficulty = THJDifficultyMedium;
             break;
         case 2:
-            difficulty = GGDifficultyHard;
+            difficulty = THJDifficultyHard;
             break;
         default:
-            difficulty = GGDifficultyEasy;
+            difficulty = THJDifficultyEasy;
             break;
     }
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请选择先后手" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *actionBlack = [UIAlertAction actionWithTitle:@"先手" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请您选择先后" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *actionBlack = [UIAlertAction actionWithTitle:@"我先" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self startTimer];
-        AI = [[GGPlayer alloc] initWithPlayer:GGPlayerTypeWhite difficulty:difficulty];
+        AI = [[THJPlayer alloc] initWithPlayer:THJPlayerTypeWhite difficulty:difficulty];
         _lblInformation.text = INFO_YOUR_TURN;
     }];
-    UIAlertAction *actionWhite = [UIAlertAction actionWithTitle:@"后手" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *actionWhite = [UIAlertAction actionWithTitle:@"我后" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self startTimer];
-        AI = [[GGPlayer alloc] initWithPlayer:GGPlayerTypeBlack difficulty:difficulty];
+        AI = [[THJPlayer alloc] initWithPlayer:THJPlayerTypeBlack difficulty:difficulty];
         [self AIPlayWithMove:nil];
         _lblInformation.text = INFO_OPPONENT_TURN;
     }];
@@ -129,21 +129,22 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)saveMove:(GGMove *)move {
-    if (playerType == GGPlayerTypeBlack) {
+- (void)saveMove:(THJMove *)move {
+    if (playerType == THJPlayerTypeBlack) {
         blackMove = move;
     } else {
         whiteMove = move;
     }
 }
 
-- (void)moveAtPoint:(GGPoint)point sendPacketInLAN:(BOOL)sendPacket {
+- (void)moveAtPoint:(THJPoint)point sendPacketInLAN:(BOOL)sendPacket {
     if([board canMoveAtPoint:point]) {
-        if (_gameMode == GGModeDouble) {
+        if (_gameMode == THJModeDouble) {
             _btnUndo.enabled = YES;
         }
         
-        GGMove *move = [[GGMove alloc] initWithPlayer:playerType point:point];
+        THJMove *move = [[THJMove alloc] initWithTHJPlayer:playerType amdPoint:point];
+        
         [board makeMove:move];
         [self saveMove:move];
         
@@ -154,37 +155,38 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
         [menuController.moveSoundPlayer play];
         
         if ([board checkWinAtPoint:point]) {
-            if (_gameMode == GGModeLAN && sendPacket == YES) {
+            if (_gameMode == THJModeLAN && sendPacket == YES) {
                 NSDictionary *data = @{ @"i" : @(point.i), @"j" : @(point.j) };
-                GGPacket *packet = [[GGPacket alloc] initWithData:data type:GGPacketTypeMove action:GGPacketActionUnknown];
+            
+                 THJPacket *packet = [[THJPacket alloc] initWithTHJData:data andType:THJPacketTypeMove andAction:THJPacketActionUnknown];
                 [self sendPacket:packet];
             }
             [self handleWin];
         } else {
             [self switchPlayer];
             
-            if (_gameMode == GGModeSingle) {
+            if (_gameMode == THJModeSingle) {
                 [self AIPlayWithMove:move];
-            } else if (_gameMode == GGModeLAN && sendPacket == YES) {
+            } else if (_gameMode == THJModeLAN && sendPacket == YES) {
                 _btnUndo.enabled = NO;
                 NSDictionary *data = @{ @"i" : @(point.i), @"j" : @(point.j) };
-                GGPacket *packet = [[GGPacket alloc] initWithData:data type:GGPacketTypeMove action:GGPacketActionUnknown];
+                 THJPacket *packet = [[THJPacket alloc] initWithTHJData:data andType:THJPacketTypeMove andAction:THJPacketActionUnknown];
                 [self sendPacket:packet];
                 _boardView.userInteractionEnabled = NO;
-            } else if (_gameMode == GGModeLAN && sendPacket == NO) {
+            } else if (_gameMode == THJModeLAN && sendPacket == NO) {
                 _boardView.userInteractionEnabled = YES;
             }
         }
     }
 }
 
-- (void)AIPlayWithMove:(GGMove *)move {
+- (void)AIPlayWithMove:(THJMove *)move {
     _btnReset.enabled = NO;
     _btnUndo.enabled = NO;
     _boardView.userInteractionEnabled = NO;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [AI update:move];
-        GGMove *AIMove = [AI getMove];
+        THJMove *AIMove = [AI getMove];
         [board makeMove:AIMove];
         [self saveMove:AIMove];
         
@@ -215,7 +217,7 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 
 - (void)handleWin {
     NSString *alertTitle;
-    if (playerType == GGPlayerTypeBlack) {
+    if (playerType == THJPlayerTypeBlack) {
         alertTitle = @"黑方获胜!";
     } else {
         alertTitle = @"白方获胜!";
@@ -238,7 +240,7 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
     [self stopTimer];
     [board initBoard];
     _boardView.userInteractionEnabled = YES;
-    playerType = GGPlayerTypeBlack;
+    playerType = THJPlayerTypeBlack;
     [_boardView reset];
     _btnUndo.enabled = NO;
     blackMove = nil;
@@ -246,10 +248,10 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 }
 
 - (void)switchPlayer {
-    if (playerType == GGPlayerTypeBlack) {
-        playerType = GGPlayerTypeWhite;
+    if (playerType == THJPlayerTypeBlack) {
+        playerType = THJPlayerTypeWhite;
     } else {
-        playerType = GGPlayerTypeBlack;
+        playerType = THJPlayerTypeBlack;
     }
     if (_lblInformation.text == INFO_YOUR_TURN) {
         _lblInformation.text = INFO_OPPONENT_TURN;
@@ -283,7 +285,7 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 }
 
 - (void)timerTick:(NSTimer *)timer {
-    if (playerType == GGPlayerTypeBlack) {
+    if (playerType == THJPlayerTypeBlack) {
         timeSecBlack++;
         if (timeSecBlack == 60)
         {
@@ -329,7 +331,7 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 
 #pragma mark - Socket related functions
 
-- (void)sendPacket:(GGPacket *)packet {
+- (void)sendPacket:(THJPacket *)packet {
     
     // Encode Packet Data
     NSMutableData *packetData = [[NSMutableData alloc] init];
@@ -350,16 +352,16 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 
 - (void)parseData:(NSData *)data {
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-    GGPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
+    THJPacket *packet = [unarchiver decodeObjectForKey:@"packet"];
     [unarchiver finishDecoding];
     
     
-    if ([packet type] == GGPacketTypeMove) {
+    if ([packet type] == THJPacketTypeMove) {
         NSNumber *i = [(NSDictionary *)[packet data] objectForKey:@"i"];
         
         NSNumber *j = [(NSDictionary *)[packet data] objectForKey:@"j"];
         
-        GGPoint point;
+        THJPoint point;
         point.i = i.intValue;
         point.j = j.intValue;
         
@@ -374,21 +376,24 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
         }
         
         
-    } else if ([packet type] == GGPacketTypeReset) {
-        if ([packet action] == GGPacketActionResetRequest) {
+    } else if ([packet type] == THJPacketTypeReset) {
+        if ([packet action] == THJPacketActionResetRequest) {
             
             [self dismissAlertControllers];
             
             self.resetChooseAlertController = [UIAlertController alertControllerWithTitle:@"对方请求重开" message:@"" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *actionAgree = [UIAlertAction actionWithTitle:@"同意" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                GGPacket *packet = [[GGPacket alloc] initWithData:nil type:GGPacketTypeReset action:GGPacketActionResetAgree];
+                
+                 THJPacket *packet = [[THJPacket alloc] initWithTHJData:nil andType:THJPacketTypeReset andAction:THJPacketActionResetAgree];
+
                 [self sendPacket:packet];
                 [self handleReset];
                 [self startGameInLANMode];
             }];
             
             UIAlertAction *actionReject = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                GGPacket *packet = [[GGPacket alloc] initWithData:nil type:GGPacketTypeReset action:GGPacketActionResetReject];
+                 THJPacket *packet = [[THJPacket alloc] initWithTHJData:nil andType:THJPacketTypeReset andAction:THJPacketActionResetReject];
+                
                 [self sendPacket:packet];
             }];
             
@@ -396,13 +401,13 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
             [_resetChooseAlertController addAction:actionReject];
             [self presentViewController:_resetChooseAlertController animated:YES completion:nil];
             
-        } else if ([packet action] == GGPacketActionResetAgree) {
+        } else if ([packet action] == THJPacketActionResetAgree) {
             [self dismissAlertControllers];
             
             [self handleReset];
             [self startGameInLANMode];
             
-        } else if ([packet action] == GGPacketActionResetReject) {
+        } else if ([packet action] == THJPacketActionResetReject) {
             [self dismissAlertControllers];
             
             self.resetRejectAlertController = [UIAlertController alertControllerWithTitle:@"对方拒绝了你的请求" message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -412,13 +417,13 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
             [self presentViewController:_resetRejectAlertController animated:YES completion:nil];
         }
         
-    } else if (packet.type == GGPacketTypeUndo) {
-        if (packet.action == GGPacketActionUndoRequest) {
+    } else if (packet.type == THJPacketTypeUndo) {
+        if (packet.action == THJPacketActionUndoRequest) {
             [self dismissAlertControllers];
             
             self.undoChooseAlertController = [UIAlertController alertControllerWithTitle:@"对方请求悔棋" message:@"" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *actionAgree = [UIAlertAction actionWithTitle:@"同意" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                GGPacket *packet = [[GGPacket alloc] initWithData:nil type:GGPacketTypeUndo action:GGPacketActionUndoAgree];
+                 THJPacket *packet = [[THJPacket alloc] initWithTHJData:nil andType:THJPacketTypeUndo andAction:THJPacketActionUndoAgree];
                 [self sendPacket:packet];
                 [board undoMove:blackMove];
                 [board undoMove:whiteMove];
@@ -429,14 +434,14 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
             }];
             
             UIAlertAction *actionReject = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                GGPacket *packet = [[GGPacket alloc] initWithData:nil type:GGPacketTypeUndo action:GGPacketActionUndoReject];
+                    THJPacket *packet = [[THJPacket alloc] initWithTHJData:nil andType:THJPacketTypeUndo andAction:THJPacketActionUndoReject];
                 [self sendPacket:packet];
             }];
             
             [_undoChooseAlertController addAction:actionAgree];
             [_undoChooseAlertController addAction:actionReject];
             [self presentViewController:_undoChooseAlertController animated:YES completion:nil];
-        } else if (packet.action == GGPacketActionUndoAgree) {
+        } else if (packet.action == THJPacketActionUndoAgree) {
             [self dismissAlertControllers];
             
             [board undoMove:blackMove];
@@ -445,7 +450,7 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
             blackMove = nil;
             whiteMove = nil;
             _btnUndo.enabled = NO;
-        } else if (packet.action == GGPacketActionUndoReject) {
+        } else if (packet.action == THJPacketActionUndoReject) {
             [self dismissAlertControllers];
             
             self.undoRejectAlertController = [UIAlertController alertControllerWithTitle:@"对方拒绝了你的请求" message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -489,16 +494,15 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 }
 
 
-#pragma mark - GGBoardViewDelegate
-
-- (void)boardView:(GGBoardView *)boardView didTapOnPoint:(GGPoint)point {
-    [self moveAtPoint:point sendPacketInLAN:YES];
+#pragma mark - THJBoardViewDelegate
+- (void)THJboardView:(nonnull THJBoardView *)boardView didTapOnPoint:(THJPoint)point {
+     [self moveAtPoint:point sendPacketInLAN:YES];
 }
 
 
-#pragma mark - GGHostListControllerDelegate
+#pragma mark - THJHostListControllerDelegate
 
-//- (void)controller:(GGHostListController *)controller didJoinGameOnSocket:(GCDAsyncSocket *)socket {
+//- (void)controller:(THJHostListController *)controller didJoinGameOnSocket:(GCDAsyncSocket *)socket {
 //    self.socket = socket;
 //    [_socket setDelegate:self];
 //    _boardView.userInteractionEnabled = NO;
@@ -508,7 +512,7 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 //
 //}
 //
-//- (void)controller:(GGHostListController *)controller didHostGameOnSocket:(GCDAsyncSocket *)socket {
+//- (void)controller:(THJHostListController *)controller didHostGameOnSocket:(GCDAsyncSocket *)socket {
 //    self.socket = socket;
 //    [_socket setDelegate:self];
 //    isHost = YES;
@@ -524,26 +528,26 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 
 - (IBAction)btnReset_TouchUp:(UIButton *)sender {
     
-    if (_gameMode == GGModeSingle) {
+    if (_gameMode == THJModeSingle) {
         [self handleReset];
         [self choosePlayerType];
-    } else if (_gameMode == GGModeDouble){
+    } else if (_gameMode == THJModeDouble){
         [self handleReset];
         [self startTimer];
-    } else if (_gameMode == GGModeLAN) {
+    } else if (_gameMode == THJModeLAN) {
         if (oppositeReset == YES) {
             [self handleReset];
             [self startGameInLANMode];
             
             oppositeReset = NO;
             NSString *data = @"reset";
-            GGPacket *packet = [[GGPacket alloc] initWithData:data type:GGPacketTypeReset action:GGPacketActionUnknown];
+    
+             THJPacket *packet = [[THJPacket alloc] initWithTHJData:data andType:THJPacketTypeReset andAction:THJPacketActionUnknown];
             [self sendPacket:packet];
         } else {
             self.resetWaitAlertController = [UIAlertController alertControllerWithTitle:@"等待对方回应" message:@"" preferredStyle:UIAlertControllerStyleAlert];
             [self presentViewController:_resetWaitAlertController animated:YES completion:nil];
-            
-            GGPacket *packet = [[GGPacket alloc] initWithData:nil type:GGPacketTypeReset action:GGPacketActionResetRequest];
+            THJPacket *packet = [[THJPacket alloc] initWithTHJData:nil andType:THJPacketTypeReset andAction:THJPacketActionResetRequest];
             [self sendPacket:packet];
         }
     }
@@ -551,7 +555,7 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
 }
 
 - (IBAction)btnUndo_TouchUp:(UIButton *)sender {
-    if (_gameMode == GGModeSingle) {
+    if (_gameMode == THJModeSingle) {
         if (blackMove != nil && whiteMove != nil) {
             [board undoMove:blackMove];
             [board undoMove:whiteMove];
@@ -562,8 +566,8 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
             whiteMove = nil;
             _btnUndo.enabled = NO;
         }
-    } else if (_gameMode == GGModeDouble) {
-        if (playerType == GGPlayerTypeBlack) {
+    } else if (_gameMode == THJModeDouble) {
+        if (playerType == THJPlayerTypeBlack) {
             [board undoMove:whiteMove];
             [_boardView removeImageWithCount:1];
             [self switchPlayer];
@@ -576,11 +580,11 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
             _btnUndo.enabled = NO;
             blackMove = nil;
         }
-    } else if (_gameMode == GGModeLAN) {
+    } else if (_gameMode == THJModeLAN) {
         self.undoWaitAlertController = [UIAlertController alertControllerWithTitle:@"等待对方回应" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         [self presentViewController:_undoWaitAlertController animated:YES completion:nil];
-        
-        GGPacket *packet = [[GGPacket alloc] initWithData:nil type:GGPacketTypeUndo action:GGPacketActionUndoRequest];
+        THJPacket *packet = [[THJPacket alloc] initWithTHJData:nil andType:THJPacketTypeUndo andAction:THJPacketActionUndoRequest];
+    
         [self sendPacket:packet];
         
     }
@@ -603,5 +607,4 @@ NSString * const INFO_OPPONENT_TURN = @"对方回合";
     // Pass the selected object to the new view controller.
 }
 */
-
 @end
